@@ -43,29 +43,32 @@
 
  Once connection is successful, below GUI is displayed to user.
 
-C1
+![ConnectionSuccess](https://user-images.githubusercontent.com/72927429/104090110-6356b480-529a-11eb-9df7-38561e380c91.PNG)
+
 
  User can click on "LOAD YANGS" to download yangs to default working directory.
 
-C2
+![LoadYangs](https://user-images.githubusercontent.com/72927429/104090111-63ef4b00-529a-11eb-9a02-71c8c33396c8.PNG)
 
+ 
  **User can specify non-default folder by disabling "Use default" checkbox.**
 
  Once download is successful, below message is shown to user.
 
-C3
+![DownloadSuccess](https://user-images.githubusercontent.com/72927429/104090112-6487e180-529a-11eb-9643-df5407c51d12.PNG)
 
+ 
  If any error, same will be reported. YANGS download from device to disk follows a "Best Effort" approach.
 
  Click on "DO OPERATIONS" to trigger yang processing & resulting "YangDetails" GUI.
  **User can specify non-default folder containing all YANG files that needs to be processed by disabling "Use default" checkbox.**
 
-
-C4
+![DoOperations](https://user-images.githubusercontent.com/72927429/104090113-65207800-529a-11eb-9780-25b4732b8af7.PNG)
 
  YangDetails GUI contains supports below operations.
 
-C5
+![YangDetails](https://user-images.githubusercontent.com/72927429/104090114-65b90e80-529a-11eb-99ae-653bacc52f0e.PNG)
+
 
  Enable "Use filtered yangs for get/getconfig" checkbox to support below operations. (Enabled by default: Recommended)
 
@@ -78,15 +81,16 @@ C5
 * **CLEAR SCREEN** -> Clears Output screen.
 	
 * **CUSTOM GET/GETCONFIG** -> Launcher Input window for user's custom XML input.
+
+![CustomXML](https://user-images.githubusercontent.com/72927429/104090108-62be1e00-529a-11eb-97d0-b947b1c5cd57.PNG)
 			
-	C7
 	
 
 * **CLOSE** -> Closed "YangDetails" GUI
 	
  Select desired YANG file from available dropdown menu.
 
-C6
+![DropDown](https://user-images.githubusercontent.com/72927429/104090107-618cf100-529a-11eb-9189-56cd758b10a4.PNG)
 
 
 
@@ -95,7 +99,7 @@ C6
 
  A Sample success message is as below:
 
-C8
+![SampleSuccess](https://user-images.githubusercontent.com/72927429/104090109-62be1e00-529a-11eb-9013-c14fee55c849.PNG)
 
  ---
 
