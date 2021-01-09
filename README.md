@@ -1,20 +1,30 @@
  # NETCONF GUI tool for ncclient NETCONF operations.
 
  ##### NETCONF_GUI tool provides a PyQt5 based GUI interface to connnect to NETCONF supported device.
- ##### NETCONG GUI tool uses ncclient library to perform all NETCONF operations.
+ ##### NETCONF GUI tool uses ncclient library to perform all NETCONF operations.
  
  ---
+ 
+ ## Requirements:
+ 
+ Python==3.8.5
+ PyQt5
+ ncclient==0.6.7
+ lxml==4.5.2
+ 
+ ---
+ 
  
  ## Description:
  
  NETCONF GUI tool connects to any NETCONF supported device & downloads YANG files for processing or parsing.
- In case yangs are already available with the user, user can specify the directory in the GUI to process/parse the YANG files.
+ In case yangs are already available with the user, user can specify the directory housing the yang files in the GUI to process/parse the YANG files.
  
  Based on processing, the tool automatically identifies YANGS that support GET/GETCONFIG/ACTION RPC calls & lists the filtered supported YANGS in dropdown menu for user to perform NETCONF operations.
  
  **NETCONF GUI tool automatically generated input XML files, based on parsing each YANG file to identify namespaces, prefixes & containers, for GET/GETCONFIG operations based on YANG/Capability selected by user from dropdown menu & displays output to user.**
  
- If desired, User also has option to enter custom XML as input.
+ If desired, User also has the option to enter custom XML as input.
  
  ---
  
@@ -29,7 +39,7 @@
 	**All GET/GETCONFIG operations results, if successful, will be saved in disk as XML file under working directory.**
 	**Output will also be shown in GUI in read-only text box "Output"**
 
- 6. If supported by ynag definition, user can perform RPC ACTIONS for selected YANG. *(via ncclient dispatch module)*
+ 6. If supported by yang definition, user can perform RPC ACTIONS for selected YANG. *(via ncclient dispatch module)*
  
  ---
 
@@ -39,7 +49,7 @@
 
  ```C:\NCGUI>python main.py```
 
- In the NCGUI enter Device IP address, username, password & click on "Connect"
+ In NCGUI enter Device IP address, username, password, NETCONF port *(defaults to 830) & click on "Connect"
 
  Once connection is successful, below GUI is displayed to user.
 
@@ -65,28 +75,29 @@
 
 ![DoOperations](https://user-images.githubusercontent.com/72927429/104090113-65207800-529a-11eb-9780-25b4732b8af7.PNG)
 
- YangDetails GUI contains supports below operations.
+ YangDetails GUI contains/supports below operations.
 
 ![YangDetails](https://user-images.githubusercontent.com/72927429/104090114-65b90e80-529a-11eb-99ae-653bacc52f0e.PNG)
 
 
- Enable "Use filtered yangs for get/getconfig" checkbox to support below operations. (Enabled by default: Recommended)
+ Enable "Use filtered yangs for get/getconfig" checkbox to support below operations. **(Enabled by default: Recommended)**
 
-* *GET* -> Perfors GET operation for selected yang.
+* **GET** -> Performs GET operation for selected yang.
 
-* **GETCONFIG** -> Perfors GET operation for selected yang.
+* **GETCONFIG** -> Performs GET operation for selected yang.
 	
 * **ACTION** -> When enabled, supports RPC ACTION calls for selected yang.
 
 * **CLEAR SCREEN** -> Clears Output screen.
 	
-* **CUSTOM GET/GETCONFIG** -> Launcher Input window for user's custom XML input.
+* **CUSTOM GET/GETCONFIG** -> Launches Input window for user's custom XML input.
 
 ![CustomXML](https://user-images.githubusercontent.com/72927429/104090108-62be1e00-529a-11eb-97d0-b947b1c5cd57.PNG)
 			
 	
 
-* **CLOSE** -> Closed "YangDetails" GUI
+* **CLOSE** -> Closes "YangDetails" GUI
+
 	
  Select desired YANG file from available dropdown menu.
 
@@ -97,7 +108,7 @@
  Once YANG is selected click on GET/GETCONFIG/ACTION buttons for desired operation.
  Output will be shown in Output text box & also downloaded onto working directory as XML file.
 
- A Sample success message is as below:
+ A Sample success message, with details on downloaded XML response, is as below:
 
 ![SampleSuccess](https://user-images.githubusercontent.com/72927429/104090109-62be1e00-529a-11eb-9013-c14fee55c849.PNG)
 
