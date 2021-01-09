@@ -8,9 +8,13 @@
  ## Requirements:
  
  Python==3.8.5
+ 
  PyQt5
+ 
  ncclient==0.6.7
+ 
  lxml==4.5.2
+ 
  
  ---
  
@@ -24,6 +28,8 @@
  
  **NETCONF GUI tool automatically generated input XML files, based on parsing each YANG file to identify namespaces, prefixes & containers, for GET/GETCONFIG operations based on YANG/Capability selected by user from dropdown menu & displays output to user.**
  
+ **Supported on Python 3 only.**
+ 
  If desired, User also has the option to enter custom XML as input.
  
  ---
@@ -31,7 +37,7 @@
  ## Details on operations supported.
  
  1. Connect to NETCONF device.
- 2. Download YANGs from device to your disk. **(via ncclient getschema)*
+ 2. Download YANGs from device to your disk. *(via ncclient getschema)*
  3. Automatically parse downloaded yangs to create GET/GETCONFIG input XMLs. *(via ncclient get/getconfig)*
  4. Perform GET/GETCONFIG operations for user selected YANG using auto generated input XML specific to selected yang.  *(via ncclient get/getconfig)*
  5. Perform GET/GETCONFIG operations for custom XML input specified by user. *(via ncclient get/getconfig)*
@@ -49,7 +55,7 @@
 
  ```C:\NCGUI>python main.py```
 
- In NCGUI enter Device IP address, username, password, NETCONF port *(defaults to 830) & click on "Connect"
+ In NCGUI enter Device IP address, username, password, NETCONF port *(defaults to 830)* & click on "Connect"
 
  Once connection is successful, below GUI is displayed to user.
 
