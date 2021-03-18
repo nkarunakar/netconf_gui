@@ -227,9 +227,9 @@ class Client:
                     self.__yprops[c].getContainerandLeaf()
             except KeyError as e:
                 myang=myang+","+c
-            if len(myang)>0:
-                reason="Missing yang file for "+myang+" capability.\nEnsure yang folders has all yangs downloaded for proper processing."
-                return(0,reason)
+        if len(myang)>0:
+            reason="Missing yang file for "+myang+" capability.\nEnsure yang folders has all yangs downloaded for proper processing."
+            return(1,reason)
         return (0, reason)
 
     def simpleget(self,mode,outdir,filterstring):
