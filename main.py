@@ -261,7 +261,7 @@ class NCMenu(QWidget):
         self.retstatus = status
         self.retmessage = message
         self.retmessage1 = message1
-        if self.retstatus:
+        if self.retstatus < 0:
             mbox = QMessageBox(self.w)
             mbox.setWindowTitle("ERROR MESSAGE")
             mbox.setIcon(QMessageBox.Warning)
