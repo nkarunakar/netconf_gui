@@ -274,6 +274,15 @@ class NCMenu(QWidget):
         #self.Device = Client.Client(self.ip_lineedit.text(),self.username_lineedit.text(),self.password_lineedit.text(),self.port_lineedit.text())
         #self.w.close()
         else:
+            if len(self.retmessage) > 0:
+                mbox = QMessageBox(self.w)
+                mbox.setWindowTitle("INFO MESSAGE")
+                mbox.setIcon(QMessageBox.Warning)
+                errmsg="Some yangs are unavailable in "+self.ddir+" Please check details"
+                mbox.setText(errmsg)
+                mbox.setDetailedText(self.retmessage)
+                mbox.setStandardButtons(QMessageBox.Ok)
+                mbox.exec_()
             self.doopbtn.setEnabled(False)
             self.ddirbtn.setEnabled(False)
             self.doopcbox.setEnabled(False)
