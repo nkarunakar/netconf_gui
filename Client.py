@@ -206,6 +206,7 @@ class Client:
     def setYangProps(self,ydir=None):
         reason=""
         count=0
+        myang=""
         if ydir is None:
             ydir=self.__ypath
         if not os.path.isdir(ydir):
@@ -225,8 +226,10 @@ class Client:
                 if self.__yprops[c].getaugmentstatus:
                     self.__yprops[c].getContainerandLeaf()
             except KeyError as e:
-                reason="Missing yang file for "+c+" capability.\nEnsure yang folders has all yangs downloaded."
-                return(-3,reason)
+                myang=myang+","+c
+            if len(myang)>0:
+                reason="Missing yang file for "+myang+" capability.\nEnsure yang folders has all yangs downloaded for proper processing."
+                return(0,reason)
         return (0, reason)
 
     def simpleget(self,mode,outdir,filterstring):
