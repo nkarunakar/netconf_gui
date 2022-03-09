@@ -335,8 +335,8 @@ class YangParser:
                     #print("Object is %r" %self.__augobject)
                     #tempx = input("ENTER")
                 if usesre.search(line):
-                    (temp,type)=self.getleafs(usesre.search(line).group(1).replace("\"",""))
-                    if type==2:
+                    (temp,atype)=self.getleafs(usesre.search(line).group(1).replace("\"",""))
+                    if atype==2:
                         #print("Updating values under type 2 if cond " + value)
                         #print("Namesapce is %r \n container is %r \n leafs is %r \n" % (augnamespace, augcontainer, temp))
                         augleaf.clear()
@@ -390,6 +390,7 @@ class YangParser:
             if breakcond==foundb:
                 #print("Returning %r - 1"%tempaugleaf)
                 return (tempaugleaf,1)
+        return(tempaugleaf,-1) #No matches at all
         #print("NO MATCTH FOR %r" %gregexstr)
 
 
